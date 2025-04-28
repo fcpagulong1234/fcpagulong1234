@@ -1,0 +1,26 @@
+private void initializeGUI() {
+        offset = 0;
+        JFrame frame = new JFrame("Laboratory Manual - Database Management");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setPreferredSize(new Dimension(400, 600));
+
+        JPanel mainPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.insets = new Insets(5, 5, 5, 5);
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+
+        JLabel titleLabel = new JLabel("Database Management System", JLabel.CENTER);
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        constraints.gridwidth = 2;
+        mainPanel.add(titleLabel, constraints);
+
+        addFormElements(mainPanel, constraints);
+        addTransactionButtons(mainPanel, constraints);
+        addDisplayArea(mainPanel, constraints);
+
+        frame.add(mainPanel);
+        frame.pack();
+        frame.setVisible(true);
+    }
