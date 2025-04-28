@@ -1,0 +1,19 @@
+private void addTransactionButtons(JPanel panel, GridBagConstraints constraints) {
+        JPanel buttonPanel = new JPanel(new GridBagLayout());
+        buttonPanel.setBorder(BorderFactory.createTitledBorder("Operations"));
+        GridBagConstraints btnConstraints = new GridBagConstraints();
+        btnConstraints.insets = new Insets(5, 5, 5, 5);
+        btnConstraints.fill = GridBagConstraints.HORIZONTAL;
+
+        JButton addButton = new JButton("Add User");
+        addButton.addActionListener(e -> addUser());
+        btnConstraints.gridy = 0;
+        buttonPanel.add(addButton, btnConstraints);
+
+        JButton showButton = new JButton("Show Records");
+        showButton.addActionListener(e -> showRecords());
+        btnConstraints.gridy = 1;
+        buttonPanel.add(showButton, btnConstraints);
+
+        constraints.gridy = 2;
+        panel.add(buttonPanel, constraints);
